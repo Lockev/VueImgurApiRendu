@@ -25,3 +25,10 @@
   width: 80vw;
   margin: 0 auto;
 }
+.button{
+  background-color: darkseagreen;
+  color:white;
+  display:block;
+  margin: auto;
+  border-radius: 30px;
+}
