@@ -1,4 +1,4 @@
-# rendu_semaine_api_imgur
+# exo2
 
 ## Project setup
 ```

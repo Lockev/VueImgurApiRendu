@@ -1,0 +1,26 @@
+/* --------------- */
+/* Navbar */
+/* --------------- */
+
+.nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  height: 50px;
+}
+
+.nav--item {
+  display: flex;
+  align-content: center;
+}
+
+.nav--item__link {
+  /* height: auto; */
+}
+/* --------------- */
+/* Views */
+/* --------------- */
+.container {
+  width: 80vw;
+  margin-top: 50px;
+}
