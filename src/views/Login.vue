@@ -1,13 +1,17 @@
 <template>
   <div class="container">
-    <p>Vous etes sur la page Login</p>
+    <div>
+      <a class="" v-on:click="login">Login</a>
+    </div>
   </div>
 </template>
 
 <script>
+import { mapActions } from "vuex";
+
 export default {
   name: "Index",
-
+  methods: mapActions(["login"]),
   data() {
     return {};
   }
