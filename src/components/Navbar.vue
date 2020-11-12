@@ -8,9 +8,15 @@
   </div>
 </template>
 <script>
+import router from "vue-router";
 export default {
   name: "Navbar",
-
+  methods: {
+    logout: () => {
+      localStorage.removeItem("imgur_token");
+      router.push({ name: "Index" });
+    }
+  },
   data() {
     return {};
   }

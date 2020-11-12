@@ -8,13 +8,19 @@
 </template>
 
 <script>
-import { mapActions } from "vuex";
+import api from "./../api/imgur.js";
+import router from "vue-router";
 
 export default {
   name: "Index",
-  methods: mapActions(["login"]),
+  methods: {
+    login: () => {
+      api.login();
+      router.push({ name: "Index" });
+    }
+  },
   data() {
     return {};
-  },
+  }
 };
 </script>
