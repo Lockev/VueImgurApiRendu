@@ -31,7 +31,7 @@ export default {
     logout() {
       localStorage.removeItem("imgur_token");
       this.imgur_token = null;
-      // document.location.href = "http://localhost:8081/#/";
+      document.location.href = "http://localhost:8081/#/";
     }
   },
   beforeMount() {

@@ -17,6 +17,7 @@
 .nav--item__link {
   /* height: auto; */
 }
+
 /* --------------- */
 /* Views */
 /* --------------- */
@@ -25,10 +26,17 @@
   width: 80vw;
   margin: 0 auto;
 }
-.button{
+.button {
   background-color: darkseagreen;
-  color:white;
-  display:block;
+  color: white;
+  display: block;
   margin: auto;
   border-radius: 30px;
+}
+
+.posts-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
 }
