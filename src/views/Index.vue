@@ -1,14 +1,16 @@
 <template>
   <div class="container">
-    <p>Vous etes sur l'index</p>
     <div class="posts-container">
-      <!-- <div v-for="post in posts" :key="post">
-        {{ post }}
-        <hr />
-      </div> -->
-      <PostCard v-for="(post, index) in posts" :key="index" :post="post"></PostCard>
+      <div class="posts-column" id="posts-column-1">
+        <PostCard v-for="(post, index) in posts1" :key="index" :post="post"></PostCard>
+      </div>
+      <div class="posts-column" id="posts-column-2">
+        <PostCard v-for="(post, index) in posts2" :key="index" :post="post"></PostCard>
+      </div>
+      <div class="posts-column" id="posts-column-3">
+        <PostCard v-for="(post, index) in posts3" :key="index" :post="post"></PostCard>
+      </div>
     </div>
-    <!-- <p>{{ posts }}</p> -->
   </div>
 </template>
 
@@ -25,7 +27,9 @@ export default {
   },
   data() {
     return {
-      posts: {}
+      posts1: [],
+      posts2: [],
+      posts3: []
     };
   },
   mounted() {
@@ -35,8 +39,23 @@ export default {
         console.log(e);
       })
       .then(response => {
-        this.posts = response.data.data;
-        console.log(response.data.data);
+        let i = 1;
+        response.data.data.forEach(element => {
+          switch (i) {
+            case 1:
+              this.posts1.push(element);
+              i++;
+              break;
+            case 2:
+              this.posts2.push(element);
+              i++;
+              break;
+            case 3:
+              this.posts3.push(element);
+              i = 1;
+              break;
+          }
+        });
       });
   }
 };

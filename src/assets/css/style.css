@@ -1,3 +1,7 @@
+video {
+  width: 100%;
+}
+
 /* --------------- */
 /* Navbar */
 /* --------------- */
@@ -37,6 +41,20 @@
 .posts-container {
   display: flex;
   flex-wrap: wrap;
-  align-items: center;
   justify-content: space-around;
+}
+
+.posts-column {
+  display: flex;
+  flex-direction: column;
+  width: 30%;
+}
+
+.card {
+  background-color: rgb(134, 134, 134);
+  margin: 1em auto;
+  width: 100%;
+}
+.card img {
+  width: 100%;
 }
