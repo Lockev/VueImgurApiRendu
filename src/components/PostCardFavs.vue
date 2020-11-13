@@ -11,7 +11,10 @@
           <video><source :src="post.mp4" type="video/mp4" /></video>
         </div>
         <div v-else>
-          <img :src="'https://api.imgur.com/3/image/' + post.id" :alt="post.title" />
+          <img v-if="post.type == 'image/jpeg'" :src="'https://i.imgur.com/' + post.cover + '.jpeg'" :alt="post.title" />
+          <img v-if="post.type == 'image/jpg'" :src="'https://i.imgur.com/' + post.cover + '.jpg'" :alt="post.title" />
+          <img v-if="post.type == 'image/png'" :src="'https://i.imgur.com/' + post.cover + '.png'" :alt="post.title" />
+          <img v-if="post.type == 'image/gif'" :src="'https://i.imgur.com/' + post.cover + '.gif'" :alt="post.title" />
         </div>
       </div>
     </div>

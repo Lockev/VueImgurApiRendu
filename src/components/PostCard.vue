@@ -6,7 +6,10 @@
         <div v-if="post.images[0].type == 'video/mp4'">
           <video><source :src="post.images[0].link" type="video/mp4" /></video>
         </div>
-        <div v-else><img :src="post.images[0].link" :alt="post.title" /></div>
+
+        <div v-else>
+          <img :src="post.images[0].link" :alt="post.title" />
+        </div>
       </div>
       <div v-else>
         <p>{{ post.link }}</p>
