@@ -11,6 +11,7 @@ video {
   flex-direction: row;
   justify-content: space-around;
   height: 50px;
+  background-color:rgb(193, 125, 202);
 }
 
 .nav--item {
@@ -20,8 +21,17 @@ video {
 
 .nav--item__link {
   /* height: auto; */
+  color: white;
 }
-
+.nav--item__link:hover {
+  /* height: auto; */
+  color: green;
+}
+.button a[href*="#"] {
+  background: url('https://static.vecteezy.com/system/resources/previews/001/187/550/non_2x/heart-glossy-png.png') no-repeat 100% 0;
+  background-size: 12px 12px;
+  padding-right: 19px;
+}
 /* --------------- */
 /* Views */
 /* --------------- */
@@ -31,11 +41,14 @@ video {
   margin: 0 auto;
 }
 .button {
-  background-color: darkseagreen;
+  background-color: rgb(61, 168, 61);
   color: white;
   display: block;
   margin: auto;
   border-radius: 30px;
+}
+.button:hover{
+  background-color:rgb(193, 125, 202);
 }
 
 .posts-container {
@@ -51,10 +64,37 @@ video {
 }
 
 .card {
-  background-color: rgb(134, 134, 134);
+  background-color:rgb(31, 31, 78);
   margin: 1em auto;
   width: 100%;
 }
+
 .card img {
   width: 100%;
+}
+.card__head{
+  color:green;
+  font-size: 15px;
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  margin: 2px;
+}
+.card__desc{
+  color: red;
+  font-size: 10px;
+  
+}
+.card__btn{
+  font-size: 10px;
+  color:white;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+/* Login */
+.textlogin{
+  display:flex;
+  justify-content:center;
+  color:rgb(193, 125, 202);
+}
+/* Fav */
+.fav_connexion{
+  color:rgb(193, 125, 202);
 }

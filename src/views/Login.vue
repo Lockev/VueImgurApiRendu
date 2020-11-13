@@ -1,7 +1,7 @@
 <template>
   <div class="container">
     <div>
-      <a class="" v-on:click="login">Login</a>
+      <a class="textlogin" v-on:click="login">Veuillez-vous connecter</a>
       <button class="button" v-on:click="login">Login</button>
     </div>
   </div>
@@ -17,10 +17,10 @@ export default {
     login: () => {
       api.login();
       router.push({ name: "Index" });
-    }
+    },
   },
   data() {
     return {};
-  }
+  },
 };
 </script>

@@ -24,7 +24,9 @@
       <h2 class="card__head">{{ post.title }}</h2>
       <p class="card__desc">{{ post.description }}</p>
     </div>
-    <a href="#" class="card__btn">Ajouter en Fav</a>
+    <button class="button">
+      <a href="#" class="card__btn">Ajouter en Fav</a>
+    </button>
   </div>
 </template>
 
@@ -32,7 +34,7 @@
 export default {
   name: "PostCard",
   props: {
-    post: Object
-  }
+    post: Object,
+  },
 };
 </script>
