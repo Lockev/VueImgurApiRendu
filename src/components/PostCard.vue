@@ -12,7 +12,6 @@
         </div>
       </div>
       <div v-else>
-        <p>{{ post.link }}</p>
         <!-- SSI le post n'a qu'une image/video -->
         <div v-if="post.type == 'video/mp4'">
           <video><source :src="post.link" type="video/mp4" /></video>
@@ -22,19 +21,29 @@
     </div>
     <div class="card__body">
       <h2 class="card__head">{{ post.title }}</h2>
-      <p class="card__desc">{{ post.description }}</p>
+      <!-- <p class="card__desc">{{ post.description }}</p> -->
+      <button class="card__btn add-favorite" v-if="!post.favorite" v-on:click="favorite(post.cover)">
+        <p>Add to Favs</p>
+      </button>
+      <button class="card__btn remove-favorite" v-else v-on:click="favorite(post.cover)">
+        <p>Remove from Favs</p>
+      </button>
     </div>
-    <button class="button">
-      <a href="#" class="card__btn">Ajouter en Fav</a>
-    </button>
   </div>
 </template>
 
 <script>
+import api from "./../api/imgur.js";
 export default {
   name: "PostCard",
   props: {
-    post: Object,
+    post: Object
   },
+  methods: {
+    favorite(id) {
+      api.favorite(id);
+      this.post.favorite = !this.post.favorite;
+    }
+  }
 };
 </script>

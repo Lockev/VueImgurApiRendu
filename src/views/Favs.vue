@@ -5,25 +5,13 @@
     </div>
     <div v-else class="posts-container">
       <div class="posts-column" id="posts-column-1">
-        <PostCardFavs
-          v-for="(post, index) in posts1"
-          :key="index"
-          :post="post"
-        ></PostCardFavs>
+        <PostCardFavs v-for="(post, index) in posts1" :key="index" :post="post"></PostCardFavs>
       </div>
       <div class="posts-column" id="posts-column-2">
-        <PostCardFavs
-          v-for="(post, index) in posts2"
-          :key="index"
-          :post="post"
-        ></PostCardFavs>
+        <PostCardFavs v-for="(post, index) in posts2" :key="index" :post="post"></PostCardFavs>
       </div>
       <div class="posts-column" id="posts-column-3">
-        <PostCardFavs
-          v-for="(post, index) in posts3"
-          :key="index"
-          :post="post"
-        ></PostCardFavs>
+        <PostCardFavs v-for="(post, index) in posts3" :key="index" :post="post"></PostCardFavs>
       </div>
     </div>
   </div>
@@ -37,7 +25,7 @@ import PostCardFavs from "./../components/PostCardFavs";
 export default {
   name: "Favs",
   components: {
-    PostCardFavs,
+    PostCardFavs
   },
   data() {
     return {
@@ -48,7 +36,7 @@ export default {
       posts: [],
       posts1: [],
       posts2: [],
-      posts3: [],
+      posts3: []
     };
   },
   beforeMount() {
@@ -62,40 +50,26 @@ export default {
       axios // Get user nickname
         .get("https://api.imgur.com/3/account/me", {
           headers: {
-            Authorization: "Bearer " + this.imgur_token,
-          },
+            Authorization: "Bearer " + this.imgur_token
+          }
         })
-        .catch((e) => {
+        .catch(e => {
           console.log(e);
         })
-        .then((response) => {
+        .then(response => {
           this.nickname = response.data.data.url;
 
           axios // Get favorites linked to user's nickname
-            .get(
-              "https://api.imgur.com/3/account/" +
-                this.nickname +
-                "/favorites/",
-              {
-                headers: {
-                  Authorization: "Bearer " + this.imgur_token,
-                },
+            .get("https://api.imgur.com/3/account/" + this.nickname + "/favorites/", {
+              headers: {
+                Authorization: "Bearer " + this.imgur_token
               }
-            )
-            .catch((e) => {
+            })
+            .catch(e => {
               console.log(e);
             })
-            .then((response) => {
-              response.data.data.forEach((element) => {
-                //   if (element.images == null) {
-                //     axios // Get favorites linked to user's nickname
-                //       .get("https://api.imgur.com/3/image/" + element.id)
-                //       .catch(e => {
-                //         console.log(e);
-                //       })
-                //       .response({
-                //       });
-                //   } else {
+            .then(response => {
+              response.data.data.forEach(element => {
                 switch (this.next_posts_list) {
                   case 1:
                     this.posts1.push(element);
@@ -112,11 +86,10 @@ export default {
                     this.next_posts_list = 1;
                     break;
                 }
-                // }
               });
             });
         });
     }
-  },
+  }
 };
 </script>

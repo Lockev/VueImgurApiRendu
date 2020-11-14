@@ -11,44 +11,39 @@
           <video><source :src="post.mp4" type="video/mp4" /></video>
         </div>
         <div v-else>
-          <img
-            v-if="post.type == 'image/jpeg'"
-            :src="'https://i.imgur.com/' + post.cover + '.jpeg'"
-            :alt="post.title"
-          />
-          <img
-            v-if="post.type == 'image/jpg'"
-            :src="'https://i.imgur.com/' + post.cover + '.jpg'"
-            :alt="post.title"
-          />
-          <img
-            v-if="post.type == 'image/png'"
-            :src="'https://i.imgur.com/' + post.cover + '.png'"
-            :alt="post.title"
-          />
-          <img
-            v-if="post.type == 'image/gif'"
-            :src="'https://i.imgur.com/' + post.cover + '.gif'"
-            :alt="post.title"
-          />
+          <img v-if="post.type == 'image/jpeg'" :src="'https://i.imgur.com/' + post.cover + '.jpeg'" :alt="post.title" />
+          <img v-if="post.type == 'image/jpg'" :src="'https://i.imgur.com/' + post.cover + '.jpg'" :alt="post.title" />
+          <img v-if="post.type == 'image/png'" :src="'https://i.imgur.com/' + post.cover + '.png'" :alt="post.title" />
+          <img v-if="post.type == 'image/gif'" :src="'https://i.imgur.com/' + post.cover + '.gif'" :alt="post.title" />
         </div>
       </div>
     </div>
     <div class="card__body">
       <h2 class="card__head">{{ post.title }}</h2>
-      <p class="card__desc">{{ post.description }}</p>
+      <!-- <p class="card__desc">{{ post.description }}</p> -->
+
+      <button class="card__btn add-favorite" v-if="!post.favorite" v-on:click="favorite(post.cover)">
+        <p>Add to Favs</p>
+      </button>
+      <button class="card__btn remove-favorite" v-else v-on:click="favorite(post.cover)">
+        <p>Remove from Favs</p>
+      </button>
     </div>
-    <!-- <button class="button">
-      <a href="#" class="card__btn">Ajouter en Fav</a>
-    </button> -->
   </div>
 </template>
 
 <script>
+import api from "./../api/imgur.js";
 export default {
   name: "PostCard",
   props: {
-    post: Object,
+    post: Object
   },
+  methods: {
+    favorite(id) {
+      api.favorite(id);
+      this.post.favorite = !this.post.favorite;
+    }
+  }
 };
 </script>

@@ -1,7 +1,8 @@
-video {
-  width: 100%;
+body {
+  background: url("./../patern-blue.png");
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
 }
-
 /* --------------- */
 /* Navbar */
 /* --------------- */
@@ -11,7 +12,7 @@ video {
   flex-direction: row;
   justify-content: space-around;
   height: 50px;
-  background-color:rgb(193, 125, 202);
+  background-color: #22223b;
 }
 
 .nav--item {
@@ -20,41 +21,37 @@ video {
 }
 
 .nav--item__link {
-  /* height: auto; */
-  color: white;
+  align-self: center;
+  height: 20px;
+  color: #f2e9e4;
+  text-decoration: none;
+  font-weight: bold;
 }
 .nav--item__link:hover {
   /* height: auto; */
-  color: green;
+  color: #ffcb52;
 }
-.button a[href*="#"] {
-  background: url('https://static.vecteezy.com/system/resources/previews/001/187/550/non_2x/heart-glossy-png.png') no-repeat 100% 0;
-  background-size: 12px 12px;
-  padding-right: 19px;
-}
+
 /* --------------- */
 /* Views */
 /* --------------- */
 .container {
-  background: #e2e2e2;
+  /* background: #e2e2e2; */
   width: 80vw;
   margin: 0 auto;
 }
-.button {
-  background-color: rgb(61, 168, 61);
-  color: white;
-  display: block;
-  margin: auto;
-  border-radius: 30px;
-}
-.button:hover{
-  background-color:rgb(193, 125, 202);
+
+.center {
+  display: flex;
+  align-self: center;
+  flex-direction: column;
 }
 
+/* Index */
 .posts-container {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-around;
+  justify-content: space-evenly;
 }
 
 .posts-column {
@@ -64,37 +61,77 @@ video {
 }
 
 .card {
-  background-color:rgb(31, 31, 78);
-  margin: 1em auto;
+  background-color: #22223b;
+  margin: 1.4em auto 0 auto;
   width: 100%;
+  border-radius: 5px;
+}
+.card img,
+.card video {
+  width: 100%;
+  border-radius: 5px 5px 0 0;
 }
 
-.card img {
-  width: 100%;
-}
-.card__head{
-  color:green;
+.card__head {
+  color: #f2e9e4;
   font-size: 15px;
-  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-  margin: 2px;
+  margin-top: 0;
+  /* Limite à 2 lignes de texte pour le titre */
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: normal;
+  -webkit-line-clamp: 2;
 }
-.card__desc{
-  color: red;
+.card__body {
+  margin-top: -4px; /* corectif bug rendering de l'image qui prend 4px de plus */
+  padding: 15px;
+}
+.card__desc {
+  color: #f2e9e4;
   font-size: 10px;
-  
 }
-.card__btn{
-  font-size: 10px;
-  color:white;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+.card__btn {
+  border: none;
+  cursor: pointer;
+  font-size: 0.75em;
+  font-weight: bold;
+  color: rgb(0, 0, 0);
+  font-family: "Montserrat", sans-serif;
+  border-radius: 2px;
 }
+.add-favorite {
+  background-color: #bde0fe;
+}
+.remove-favorite {
+  background-color: #febdbd;
+}
+
 /* Login */
-.textlogin{
-  display:flex;
-  justify-content:center;
-  color:rgb(193, 125, 202);
+.text-login {
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  font-size: 5em;
+  font-weight: bold;
+  color: #f75050;
 }
+
+.login--button {
+  border: none;
+  border-radius: 5px;
+  background-color: #22223b;
+  color: #f2e9e4;
+  font-size: 2em;
+  font-family: "Montserrat", sans-serif;
+  padding: 15px;
+  margin: 20px auto 0 auto;
+}
+.login--button:hover {
+}
+
 /* Fav */
-.fav_connexion{
-  color:rgb(193, 125, 202);
+.fav_connexion {
+  color: #22223b;
 }

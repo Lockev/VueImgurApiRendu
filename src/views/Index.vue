@@ -15,7 +15,7 @@
 </template>
 
 <script>
-// import api from "./../api/imgur.js";
+
 import axios from "axios";
 
 import PostCard from "./../components/PostCard";
