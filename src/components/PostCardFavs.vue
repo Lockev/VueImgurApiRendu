@@ -3,12 +3,12 @@
     <div class="card__img">
       <div v-if="post.images !== null && post.images[0].type == 'video/mp4'">
         <!-- SSI le post est une video -->
-        <video><source :src="post.images[0].mp4" type="video/mp4" /></video>
+        <video autoplay muted loop><source :src="post.images[0].mp4" type="video/mp4" /></video>
       </div>
       <div v-else>
         <!-- SSI le post n'a qu'une image/video -->
         <div v-if="post.type == 'video/mp4'">
-          <video><source :src="post.mp4" type="video/mp4" /></video>
+          <video autoplay muted loop><source :src="post.mp4" type="video/mp4" /></video>
         </div>
         <div v-else>
           <img v-if="post.type == 'image/jpeg'" :src="'https://i.imgur.com/' + post.cover + '.jpeg'" :alt="post.title" />

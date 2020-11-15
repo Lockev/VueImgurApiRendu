@@ -11,7 +11,7 @@ export default {
       // Si l'utilisateur est connecté
       var config = {
         method: "post",
-        url: "https://api.imgur.com/3/image/" + id + `/favorite?client_id=${CLIENT_ID}`,
+        url: "https://api.imgur.com/3/image/" + id + "/favorite",
         headers: {
           Authorization: "Bearer" + localStorage.getItem("imgur_token"),
           "Access-Control-Allow-Credentials": true

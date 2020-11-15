@@ -4,7 +4,7 @@
       <div v-if="post.images_count">
         <!-- SSI le post à plus d'une image/video -->
         <div v-if="post.images[0].type == 'video/mp4'">
-          <video><source :src="post.images[0].link" type="video/mp4" /></video>
+          <video autoplay muted loop><source :src="post.images[0].link" type="video/mp4" /></video>
         </div>
 
         <div v-else>
@@ -14,7 +14,7 @@
       <div v-else>
         <!-- SSI le post n'a qu'une image/video -->
         <div v-if="post.type == 'video/mp4'">
-          <video><source :src="post.link" type="video/mp4" /></video>
+          <video autoplay muted loop><source :src="post.link" type="video/mp4" /></video>
         </div>
         <div v-else><img :src="post.link" :alt="post.title" /></div>
       </div>
